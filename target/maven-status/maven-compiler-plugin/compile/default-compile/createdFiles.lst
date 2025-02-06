@@ -1,2 +1,6 @@
+com\belgianwaffles\vehicletracker\Vector2d.class
+com\belgianwaffles\vehicletracker\Callback.class
+com\belgianwaffles\vehicletracker\CurrentLocationDisplay.class
+com\belgianwaffles\vehicletracker\Main$1.class
 com\belgianwaffles\vehicletracker\Main.class
 com\belgianwaffles\vehicletracker\Vehicle.class
