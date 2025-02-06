@@ -1,5 +1,5 @@
 package com.belgianwaffles.vehicletracker;
 
 public interface Callback {
-    void callback(Vector2d param);
+    public void call(Vector2d param);
 }

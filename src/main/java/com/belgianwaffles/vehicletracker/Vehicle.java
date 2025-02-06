@@ -2,7 +2,7 @@ package com.belgianwaffles.vehicletracker;
 
 import java.util.ArrayList;
 
-public class Vehicle {
+public class Vehicle implements Observable {
 	private Vector2d mPosition;
 	private ArrayList<Callback> mCallbacks;
 	
@@ -17,22 +17,33 @@ public class Vehicle {
 		this.mCallbacks = new ArrayList<>();
 	}
 	
+	// Changes position, then calls callbacks
 	public void changePosition(Vector2d newPosition) {
 		this.mPosition = newPosition;
 		this.callCallbacks();
 	}
 	
+	// Returns the position
 	public Vector2d getPosition() {
-		return this.mPosition;
+		return new Vector2d(this.mPosition);
 	}
 
-	public void addCallback(Callback callback) {
-		this.mCallbacks.add(callback);
+	@Override
+	public void addCallback(Callback param) {
+		this.mCallbacks.add(param);
 	}
 
-	private void callCallbacks() {
+	@Override
+	public void callCallbacks() {
+		// Check for no callbacks
+		if (this.mCallbacks.size() == 0) {
+			System.out.println("No callbacks");
+			return;
+		}
+
+		// Loop through callbacks
 		for (Callback callback : this.mCallbacks) {
-			callback.callback(this.mPosition);
+			callback.call(this.mPosition);
 		}
 	}
 }

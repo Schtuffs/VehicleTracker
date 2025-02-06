@@ -2,6 +2,11 @@ package com.belgianwaffles.vehicletracker;
 public class Vector2d {
 
     private double mX, mY;
+
+    public Vector2d(Vector2d v) {
+        this.mX = v.mX;
+        this.mY = v.mY;
+    }
     
     // Default vector position of (0, 0)
     public Vector2d() {
