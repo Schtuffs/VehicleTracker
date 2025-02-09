@@ -18,7 +18,7 @@ public class Vehicle implements Observable {
 	}
 	
 	// Changes position, then calls callbacks
-	public void changePosition(Vector2d newPosition) {
+	public void changeLocation(Vector2d newPosition) {
 		this.mPosition = newPosition;
 		this.callCallbacks();
 	}

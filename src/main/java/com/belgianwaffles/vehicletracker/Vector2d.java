@@ -1,4 +1,5 @@
 package com.belgianwaffles.vehicletracker;
+
 public class Vector2d {
 
     private double mX, mY;
@@ -17,6 +18,11 @@ public class Vector2d {
     public Vector2d(double x, double y) {
         this.mX = x;
         this.mY = y;
+    }
+
+    // returns the distance between self and the given vector
+    public double distance(Vector2d vector) {
+        return Math.sqrt(Math.pow((this.getX() - vector.getX()),2) + Math.pow(this.getY() - vector.getY(), 2));
     }
 
     public void setX(double x) {
