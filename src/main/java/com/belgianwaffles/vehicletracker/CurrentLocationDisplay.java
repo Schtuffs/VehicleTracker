@@ -5,6 +5,11 @@ public class CurrentLocationDisplay implements Callback {
     public CurrentLocationDisplay() {}
     
     @Override
+    public void onSet(Object obj) {
+    	
+    }
+    
+    @Override
     public void call(Vector2d param) {
         System.out.println("Current location: " + param);
     }

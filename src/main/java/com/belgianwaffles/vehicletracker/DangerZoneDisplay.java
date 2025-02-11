@@ -14,6 +14,11 @@ public class DangerZoneDisplay implements Callback {
 		
 	}
 	
+	@Override
+	public void onSet(Object obj) {
+		
+	}
+	
 	
 	@Override
 	public void call(Vector2d param) {

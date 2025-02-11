@@ -30,6 +30,7 @@ public class Vehicle implements Observable {
 
 	@Override
 	public void addCallback(Callback param) {
+		param.onSet(this.mPosition);
 		this.mCallbacks.add(param);
 	}
 
