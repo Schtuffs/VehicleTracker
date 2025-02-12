@@ -4,6 +4,10 @@ public class CurrentLocationDisplay implements Callback {
 
     public CurrentLocationDisplay() {}
     
+    /**
+     * Outputs the current location.
+     * @param param the current location as a Vector2d
+     */
     @Override
     public void onSet(Object obj) {
     	
