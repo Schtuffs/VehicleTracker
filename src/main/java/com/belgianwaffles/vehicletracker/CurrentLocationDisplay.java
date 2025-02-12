@@ -10,7 +10,7 @@ public class CurrentLocationDisplay implements Callback {
      */
     @Override
     public void onSet(Object obj) {
-    	
+    
     }
     
     @Override

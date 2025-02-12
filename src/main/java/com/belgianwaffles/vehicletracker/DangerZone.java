@@ -42,7 +42,7 @@ public class DangerZone {
 	/**
 	 * Checks to see if the given vector is in the danger zone.
 	 * @param vector
-	 * @return
+	 * @return true if the vector is in the danger zone
 	 */
 	public boolean inDangerZone(Vector2d vector) {
 		
