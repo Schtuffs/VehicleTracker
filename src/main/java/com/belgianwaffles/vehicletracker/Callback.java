@@ -7,6 +7,10 @@ package com.belgianwaffles.vehicletracker;
  */
 public interface Callback {
     
+
+	/**
+	 * @param obj
+	 */
 	public void onSet(Object obj);
 
     /**

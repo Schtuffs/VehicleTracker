@@ -14,12 +14,22 @@ public class DangerZoneDisplay implements Callback {
 		
 	}
 	
+	/**
+	 * Empty onSet implementation to keep the compiler happy.
+	 * 
+	 * @param obj
+	 */
 	@Override
 	public void onSet(Object obj) {
 		
 	}
 	
 	
+	/**
+	 * Displays an alarm if the vehicle is in the danger zone.
+	 * 
+	 * @param param the current location as a Vector2d
+	 */
 	@Override
 	public void call(Vector2d param) {
 		

@@ -56,11 +56,10 @@ public class DangerZone {
 		return false;
 	}
 	
-/**
- * Sets the radius of the danger zone.
- * @param r the new radius value
- */
-
+	/**
+	 * Sets the radius of the danger zone.
+	 * @param r the new radius value
+	 */
 	public void setRadius(double r) {
 		this.radius = r;
 	}
