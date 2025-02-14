@@ -68,6 +68,8 @@ class Vehicle {
     + getPosition() : Vector2d
     + addCallback(Callback) : void
     + callCallbacks() : void
+    + removeCallback() : void
+    + removeCallback(Callback callback) : void
 }
 
 class Main {
