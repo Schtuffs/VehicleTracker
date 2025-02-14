@@ -1,6 +1,11 @@
 package com.belgianwaffles.vehicletracker;
 
 public class Main {
+    // Default sizes
+    private static final int RADIUS    = 3;
+    private static final int POS_X     = 6;
+    private static final int POS_Y     = 6;
+    
     public static void main(String[] args) {
 
         // Create a new vehicle starting at (0, 0) the starting point
@@ -8,7 +13,7 @@ public class Main {
         
         // Add callbacks
         vehicle.addCallback(new CurrentLocationDisplay());
-        vehicle.addCallback(new DangerZoneDisplay(new DangerZone(3, new Vector2d(6,6))));
+        vehicle.addCallback(new DangerZoneDisplay(new DangerZone(RADIUS, new Vector2d(POS_X, POS_Y))));
         vehicle.addCallback(new TotalTravelledDistanceDisplay());
         
         // All position changes in diagram

@@ -12,7 +12,10 @@ public class TotalTravelledDistanceDisplay implements Callback {
     
     @Override
     public void onSet(Object obj) {
-    	this.vehicleLocation = (Vector2d)obj;
+        // Checks the type of variable being passed
+        if (obj.getClass() == Vector2d.class) {
+    	    this.vehicleLocation = (Vector2d)obj;
+        }
     }
 
     @Override 
