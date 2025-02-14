@@ -1,0 +1,92 @@
+@startuml Vehicle
+
+interface Callback {
+    + {abstract} onSet(Object) : void
+    + {abstract} call(Vector2d) : void
+}
+
+class CurrentLocationDisplay {
+    + CurrentLocationDisplay()
+    + onSet(Object) : void
+    + call(Vector2d) : void
+}
+
+class DangerZone {
+    - radius : double
+    - centter : Vector2d
+    + DangerZone()
+    + DangerZone(double, Vector2d)
+    + inDangerZone(Vector2d) : boolean
+    + getRadius() : double
+    + setRadius(double) : void
+    + getCenter() : Vector2d
+    + setCenter(Vector2d) : void
+}
+
+class DangerZoneDisplay {
+    + DangerZoneDisplay()
+    + DangerZoneDisplay(DangerZone)
+    + onSet(Object) : void
+    + call(Vector2d) : void
+}
+
+interface Observable {
+    + {abstract} addCallback(Callback) : void
+    + {abstract} callCallbacks() : void
+}
+
+class TotalTravelledDistanceDisplay {
+    - vehicleLocation : Vector2d
+    - totalDistanceTravelled : double
+    + TotalTravelledDistanceDisplay()
+    + onSet(Object) : void
+    + call(Vector2d) : void
+}
+
+class Vector2d {
+    - mX : double
+    - mY : double
+    + Vector2d(Vector2d)
+    + Vector2d()
+    + Vector2d(double, double)
+    + distance(Vector2d) : double
+    + setX(double) : void
+    + getX() : double
+    + setY(double) : void
+    + getY() : double
+    + toString() : String
+}
+
+class Vehicle {
+    - mPosition : Vector2d
+    - mCallbacks : ArrayList<Callback>
+    + Vehicle()
+    + Vehicle(Vector2d)
+    + changeLocation(Vector2d) : void
+    + getPosition() : Vector2d
+    + addCallback(Callback) : void
+    + callCallbacks() : void
+}
+
+class Main {
+    + {static} main(String[]) : void
+}
+
+Observable -- Callback
+Main -- Vehicle
+
+Vehicle ..|> Observable
+TotalTravelledDistanceDisplay ..|> Callback
+DangerZoneDisplay -- DangerZone
+DangerZoneDisplay ..|> Callback
+CurrentLocationDisplay ..|> Callback
+
+Vector2d -- Vehicle
+Vector2d -- TotalTravelledDistanceDisplay
+Vector2d -- Main
+Vector2d -- DangerZoneDisplay
+Vector2d -- DangerZone
+Vector2d -- CurrentLocationDisplay
+Vector2d -- Callback
+
+@enduml
