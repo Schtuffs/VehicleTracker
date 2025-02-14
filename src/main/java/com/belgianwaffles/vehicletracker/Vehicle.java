@@ -47,4 +47,14 @@ public class Vehicle implements Observable {
 			callback.call(this.mPosition);
 		}
 	}
+	
+	@Override
+	public void removeCallback() {
+		this.mCallbacks.clear();
+	}
+
+	@Override
+	public void removeCallback(Callback callback) {
+		this.mCallbacks.remove(callback);
+	}
 }

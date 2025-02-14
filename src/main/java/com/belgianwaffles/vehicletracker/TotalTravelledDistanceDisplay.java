@@ -17,7 +17,6 @@ public class TotalTravelledDistanceDisplay implements Callback {
 
     @Override 
     public void call(Vector2d param) {
-
         // update distance traveled
         this.totalDistanceTravelled = param.distance(this.vehicleLocation) + this.totalDistanceTravelled;
 
