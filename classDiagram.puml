@@ -33,6 +33,8 @@ class DangerZoneDisplay {
 interface Observable {
     + {abstract} addCallback(Callback) : void
     + {abstract} callCallbacks() : void
+    + {abstract} removeCallback() : void
+    + {abstract} removeCallback(Callback callback) : void
 }
 
 class TotalTravelledDistanceDisplay {
